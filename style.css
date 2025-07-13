@@ -1,0 +1,257 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tema warna */
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #81c784;
+    --danger-color: #e53935;
+    --background-color: #f1f8e9;
+    --text-color: #212121;
+    --card-bg: #ffffff;
+    --indicator-off: #ccc;
+    --indicator-on: var(--primary-color);
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 10px;
+}
+
+/* Status koneksi */
+.connection-status {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    background: #ffecb3;
+    color: #795548;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Container utama */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.header h1 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Status bar */
+.status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--indicator-off);
+}
+
+/* Layout grid */
+.main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Servo, control dan statistik */
+.servo-control,
+.control-section,
+.weather-widget,
+.statistics,
+.logs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servo-arrows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.arrow-btn {
+    padding: 8px;
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Formulir dan tombol */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+button.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: #558b2f;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.mode-btn {
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: none;
+    background: #c8e6c9;
+    color: #2e7d32;
+    cursor: pointer;
+}
+
+.mode-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Statistik */
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+.stat-card {
+    text-align: center;
+    flex: 1 1 40%;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+}
+
+/* Log aktivitas */
+.logs-container {
+    background: #f5f5f5;
+    padding: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+    border-radius: 5px;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+}
+
+.log-entry.success {
+    color: green;
+}
+
+.log-entry.error {
+    color: red;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .status-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .statistics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-grid {
+        gap: 15px;
+    }
+
+    .servo-arrows {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .current-weather-main {
+        flex-direction: column;
+    }
+
+    #attackChart,
+    #ratChart,
+    #birdChart {
+        height: 200px;
+    }
+}
